@@ -71,7 +71,6 @@
                         </span>
                     </div>
                     <h1 class="fade-in text-5xl lg:text-7xl font-bold leading-tight">
-                        Selamat Datang di
                         <span class="gradient-text block mt-2">Perpustakaan<br>Ilham Berkah</span>
                     </h1>
                     <p class="fade-in text-lg text-white/60 leading-relaxed max-w-lg">
@@ -229,7 +228,7 @@
                     Jelajahi Katalog
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                <a href="https://wa.me/6281234567890" target="_blank" class="glass-card px-10 py-4 rounded-2xl text-base font-medium flex items-center gap-3 hover:bg-white/10">
+                <a href="https://wa.me/62895336900466" target="_blank" class="glass-card px-10 py-4 rounded-2xl text-base font-medium flex items-center gap-3 hover:bg-white/10">
                     <i class="fab fa-whatsapp"></i>
                     Hubungi Kami
                 </a>
