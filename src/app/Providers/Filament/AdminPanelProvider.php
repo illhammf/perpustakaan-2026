@@ -45,15 +45,31 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\\Filament\\Admin\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+                \App\Filament\Admin\Pages\LibrarySettings::class,
             ])
             ->discoverClusters(in: app_path('Filament/Admin/Clusters'), for: 'App\\Filament\\Admin\\Clusters')
             ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\\Filament\\Admin\\Widgets')
             ->widgets([
                 \Awcodes\Overlook\Widgets\OverlookWidget::class,
+                \App\Filament\Admin\Widgets\StatsOverview::class,
+                \App\Filament\Admin\Widgets\LatestLoans::class,
+                \App\Filament\Admin\Widgets\MonthlyLoansChart::class,
+                \App\Filament\Admin\Widgets\PopularBooksChart::class,
+                \App\Filament\Admin\Widgets\OverdueLoansWidget::class,
             ])
             ->navigationGroups([
                 NavigationGroup::make()
                     ->label('Administration'),
+                NavigationGroup::make()
+                    ->label('Master Data'),
+                NavigationGroup::make()
+                    ->label('Membership'),
+                NavigationGroup::make()
+                    ->label('Catalog'),
+                NavigationGroup::make()
+                    ->label('Transactions'),
+                NavigationGroup::make()
+                    ->label('Settings'),
             ])
             ->userMenuItems([
                 'profile' => MenuItem::make()
@@ -96,6 +112,10 @@ class AdminPanelProvider extends PanelProvider
                 \Awcodes\Overlook\OverlookPlugin::make()
                     ->includes([
                         \App\Filament\Admin\Resources\UserResource::class,
+                        \App\Filament\Admin\Resources\MemberResource::class,
+                        \App\Filament\Admin\Resources\BookResource::class,
+                        \App\Filament\Admin\Resources\LoanResource::class,
+                        \App\Filament\Admin\Resources\FineResource::class,
                     ]),
                 \Joaopaulolndev\FilamentEditProfile\FilamentEditProfilePlugin::make()
                     ->slug('my-profile')
