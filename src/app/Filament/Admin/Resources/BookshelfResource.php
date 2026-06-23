@@ -14,7 +14,7 @@ class BookshelfResource extends Resource
 {
     protected static ?string $model = Bookshelf::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-square-3-stack-3d';
+    protected static ?string $navigationIcon = 'heroicon-s-square-3-stack-3d';
 
     protected static ?string $navigationGroup = 'Master Data';
 

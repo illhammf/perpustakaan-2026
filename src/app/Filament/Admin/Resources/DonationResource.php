@@ -14,7 +14,7 @@ class DonationResource extends Resource
 {
     protected static ?string $model = Donation::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-gift';
+    protected static ?string $navigationIcon = 'heroicon-s-gift';
 
     protected static ?string $navigationGroup = 'Transactions';
 
@@ -45,7 +45,7 @@ class DonationResource extends Resource
                             ->relationship('book', 'title')
                             ->searchable()
                             ->nullable()
-                            ->visible(fn (Forms\Get $get): bool => $get('donation_type') === 'book'),
+                            ->visible(fn(Forms\Get $get): bool => $get('donation_type') === 'book'),
                         Forms\Components\TextInput::make('title')
                             ->maxLength(255)
                             ->nullable(),
@@ -74,7 +74,7 @@ class DonationResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('donation_type')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'book' => 'info',
                         'cash' => 'success',
                         'supply' => 'warning',

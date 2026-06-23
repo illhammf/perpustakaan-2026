@@ -14,7 +14,7 @@ class LoanResource extends Resource
 {
     protected static ?string $model = Loan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-arrow-right-on-rectangle';
+    protected static ?string $navigationIcon = 'heroicon-s-arrow-right-on-rectangle';
 
     protected static ?string $navigationGroup = 'Transactions';
 
@@ -86,7 +86,7 @@ class LoanResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'active' => 'warning',
                         'returned' => 'success',
                         'overdue' => 'danger',
@@ -112,8 +112,8 @@ class LoanResource extends Resource
                     ])
                     ->query(function ($query, array $data) {
                         return $query
-                            ->when($data['loan_date_from'], fn ($q, $date) => $q->whereDate('loan_date', '>=', $date))
-                            ->when($data['loan_date_until'], fn ($q, $date) => $q->whereDate('loan_date', '<=', $date));
+                            ->when($data['loan_date_from'], fn($q, $date) => $q->whereDate('loan_date', '>=', $date))
+                            ->when($data['loan_date_until'], fn($q, $date) => $q->whereDate('loan_date', '<=', $date));
                     }),
             ])
             ->actions([

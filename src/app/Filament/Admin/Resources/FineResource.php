@@ -14,7 +14,7 @@ class FineResource extends Resource
 {
     protected static ?string $model = Fine::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+    protected static ?string $navigationIcon = 'heroicon-s-banknotes';
 
     protected static ?string $navigationGroup = 'Transactions';
 
@@ -30,7 +30,7 @@ class FineResource extends Resource
                             ->relationship('loan', 'id')
                             ->searchable()
                             ->nullable()
-                            ->getOptionLabelFromRecordUsing(fn ($record) => '#' . $record->id),
+                            ->getOptionLabelFromRecordUsing(fn($record) => '#' . $record->id),
                         Forms\Components\Select::make('member_id')
                             ->relationship('member', 'name')
                             ->searchable()
@@ -73,7 +73,7 @@ class FineResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('loan.id')
                     ->label('Loan #')
-                    ->formatStateUsing(fn ($state) => '#' . $state)
+                    ->formatStateUsing(fn($state) => '#' . $state)
                     ->sortable(),
                 Tables\Columns\TextColumn::make('amount')
                     ->money('IDR')
@@ -87,7 +87,7 @@ class FineResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'unpaid' => 'danger',
                         'paid' => 'success',
                         'waived' => 'gray',
@@ -95,7 +95,7 @@ class FineResource extends Resource
                     }),
                 Tables\Columns\TextColumn::make('reason')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'late' => 'warning',
                         'damaged' => 'danger',
                         'lost' => 'gray',

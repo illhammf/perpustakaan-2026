@@ -14,7 +14,7 @@ class ProcurementResource extends Resource
 {
     protected static ?string $model = Procurement::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-truck';
+    protected static ?string $navigationIcon = 'heroicon-s-truck';
 
     protected static ?string $navigationGroup = 'Transactions';
 
@@ -92,7 +92,7 @@ class ProcurementResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'ordered' => 'warning',
                         'received' => 'success',
                         'cancelled' => 'danger',

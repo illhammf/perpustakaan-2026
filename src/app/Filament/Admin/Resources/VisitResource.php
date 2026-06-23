@@ -14,7 +14,7 @@ class VisitResource extends Resource
 {
     protected static ?string $model = Visit::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
+    protected static ?string $navigationIcon = 'heroicon-s-clipboard-document-check';
 
     protected static ?string $navigationGroup = 'Transactions';
 
@@ -53,7 +53,7 @@ class VisitResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('member.name')
                     ->label('Member')
-                    ->placeholder(fn ($record) => $record->name)
+                    ->placeholder(fn($record) => $record->name)
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('identity_number')

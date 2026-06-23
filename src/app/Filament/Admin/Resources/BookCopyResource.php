@@ -14,7 +14,7 @@ class BookCopyResource extends Resource
 {
     protected static ?string $model = BookCopy::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
+    protected static ?string $navigationIcon = 'heroicon-s-document-duplicate';
 
     protected static ?string $navigationGroup = 'Catalog';
 

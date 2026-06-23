@@ -15,7 +15,7 @@ class MemberResource extends Resource
 {
     protected static ?string $model = Member::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $navigationIcon = 'heroicon-s-users';
 
     protected static ?string $navigationGroup = 'Membership';
 
@@ -58,7 +58,7 @@ class MemberResource extends Resource
                         Forms\Components\TextInput::make('member_number')
                             ->required()
                             ->maxLength(255)
-                            ->disabled(fn (string $context): bool => $context === 'edit'),
+                            ->disabled(fn(string $context): bool => $context === 'edit'),
                         Forms\Components\Select::make('member_type_id')
                             ->relationship('memberType', 'name')
                             ->required()
@@ -107,7 +107,7 @@ class MemberResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'active' => 'success',
                         'inactive' => 'danger',
                         'suspended' => 'warning',
@@ -117,7 +117,7 @@ class MemberResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('active_loans_count')
                     ->label('Peminjaman Aktif')
-                    ->getStateUsing(fn (Member $record): int => $record->loans()->where('status', 'active')->count())
+                    ->getStateUsing(fn(Member $record): int => $record->loans()->where('status', 'active')->count())
                     ->sortable(),
                 Tables\Columns\TextColumn::make('total_fines')
                     ->label('Total Denda')
