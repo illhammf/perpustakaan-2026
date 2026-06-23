@@ -59,17 +59,17 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 NavigationGroup::make()
+                ->label('Master Data'),
+                NavigationGroup::make()
+                ->label('Membership'),
+                NavigationGroup::make()
+                ->label('Catalog'),
+                NavigationGroup::make()
+                ->label('Transactions'),
+                NavigationGroup::make()
+                ->label('Settings'),
+                NavigationGroup::make()
                     ->label('Administration'),
-                NavigationGroup::make()
-                    ->label('Master Data'),
-                NavigationGroup::make()
-                    ->label('Membership'),
-                NavigationGroup::make()
-                    ->label('Catalog'),
-                NavigationGroup::make()
-                    ->label('Transactions'),
-                NavigationGroup::make()
-                    ->label('Settings'),
             ])
             ->userMenuItems([
                 'profile' => MenuItem::make()
